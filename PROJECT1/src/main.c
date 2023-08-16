@@ -31,7 +31,7 @@
 
 #include "MGPIO_Int.h"
 #include "MRCC_Int.h"
-
+#include "MEXTI_Int.h"
 
 #define LED_G 0
 #define LED_Y 1
@@ -43,6 +43,7 @@ int main(void)
 
 	MRCC_vEnableClock(RCC_AHB1,GPIOAEN);
 	MRCC_vEnableClock(RCC_AHB1,SYSCFGEN);
+
 
 	MGPIO_vSetPinMode(GPIO_PORTA,LED_Y,GPIO_MODE_OUTPUT);
 	MGPIO_vSetPinMode(GPIO_PORTA,LED_G,GPIO_MODE_OUTPUT);

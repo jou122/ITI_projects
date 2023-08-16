@@ -1,8 +1,8 @@
-15:21:25 **** Build of configuration Debug for project PROJECT1 ****
+23:12:27 **** Incremental Build of configuration Debug for project PROJECT1 ****
 make all 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "PROJECT1.elf"
    text	   data	    bss	    dec	    hex	filename
-   7899	    160	    416	   8475	   211b	PROJECT1.elf
+   7963	    160	    480	   8603	   219b	PROJECT1.elf
 Finished building: PROJECT1.siz
  
