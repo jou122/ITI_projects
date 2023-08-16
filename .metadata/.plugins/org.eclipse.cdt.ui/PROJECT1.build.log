@@ -1,5 +1,10 @@
-00:03:00 **** Incremental Build of configuration Debug for project PROJECT1 ****
+00:09:26 **** Incremental Build of configuration Debug for project PROJECT1 ****
 make all 
+Building file: ../src/MEXTI_Prog.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/MEXTI_Prog.d" -MT"src/MEXTI_Prog.o" -c -o "src/MEXTI_Prog.o" "../src/MEXTI_Prog.c"
+Finished building: ../src/MEXTI_Prog.c
+ 
 Building file: ../src/main.c
 Invoking: Cross ARM GNU C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
@@ -17,9 +22,9 @@ Finished building: PROJECT1.hex
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "PROJECT1.elf"
    text	   data	    bss	    dec	    hex	filename
-   8219	    160	    488	   8867	   22a3	PROJECT1.elf
+   8555	    160	    488	   9203	   23f3	PROJECT1.elf
 Finished building: PROJECT1.siz
  
 
-00:03:01 Build Finished (took 656ms)
+00:09:27 Build Finished (took 701ms)
 

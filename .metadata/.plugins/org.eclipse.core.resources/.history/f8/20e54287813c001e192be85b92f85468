@@ -63,7 +63,7 @@ int main(void)
 	MGPIO_vSetPinMode(MGPIO_PORTA,LED_R,MGPIO_MODE_OUTPUT);
 
 	MGPIO_vSetPinMode(MGPIO_PORTA,button,MGPIO_MODE_INPUT);
-	MGPIO_vSetPinInputPull(MGPIO_PORTA, button, MGPIO_PULL_UP);
+
 
 	MEXTI_voidInerruptSetPort(LINE3,MEXTI_PORTA);
 	MEXTI_voidSelectTrigger(LINE3,FALLING);

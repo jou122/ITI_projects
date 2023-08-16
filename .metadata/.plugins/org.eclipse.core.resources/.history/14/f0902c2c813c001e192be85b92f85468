@@ -37,7 +37,7 @@
 #define LED_G 0
 #define LED_Y 1
 #define LED_R 2
-#define button 3
+
 
 void Blink_LED(void)
 {
@@ -49,9 +49,6 @@ void Blink_LED(void)
 
 int main(void)
 {
-
-	void (*fun_ptr)(void)=&Blink_LED;
-
 	MRCC_vInit();
 
 	MRCC_vEnableClock(RCC_AHB1,GPIOAEN);
@@ -62,17 +59,16 @@ int main(void)
 	MGPIO_vSetPinMode(MGPIO_PORTA,LED_G,MGPIO_MODE_OUTPUT);
 	MGPIO_vSetPinMode(MGPIO_PORTA,LED_R,MGPIO_MODE_OUTPUT);
 
-	MGPIO_vSetPinMode(MGPIO_PORTA,button,MGPIO_MODE_INPUT);
-	MGPIO_vSetPinInputPull(MGPIO_PORTA, button, MGPIO_PULL_UP);
-
 	MEXTI_voidInerruptSetPort(LINE3,MEXTI_PORTA);
-	MEXTI_voidSelectTrigger(LINE3,FALLING);
-	MEXIT_voidSetCallback(LINE3,fun_ptr);
 	MEXTI_voidEnableEXTI(LINE3);
+	MEXTI_voidSelectTrigger(LINE3,FALLING);
+
+	MEXIT_voidSetCallback(LINE3,MEXTI_PORTA);
 
 
 	while (1)
     {
+		Blink_LED();
     }
 	return 0;
 }
