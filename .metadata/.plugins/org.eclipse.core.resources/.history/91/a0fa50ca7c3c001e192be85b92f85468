@@ -32,20 +32,10 @@
 #include "MGPIO_Int.h"
 #include "MRCC_Int.h"
 #include "MEXTI_Int.h"
-#include "MSTK_Int.h"
 
 #define LED_G 0
 #define LED_Y 1
 #define LED_R 2
-
-
-void Blink_LED(void)
-{
-	MGPIO_vSetPinVal(GPIO_PORTA,LED_Y,GPIO_HIGH);
-	MGPIO_vSetPinVal(GPIO_PORTA,LED_G,GPIO_HIGH);
-	MGPIO_vSetPinVal(GPIO_PORTA,LED_R,GPIO_LOW);
-}
-
 
 int main(void)
 {
@@ -59,16 +49,17 @@ int main(void)
 	MGPIO_vSetPinMode(GPIO_PORTA,LED_G,GPIO_MODE_OUTPUT);
 	MGPIO_vSetPinMode(GPIO_PORTA,LED_R,GPIO_MODE_OUTPUT);
 
-	MEXTI_voidInerruptSetPort(LINE3,PORTA);
 	MEXTI_voidEnableEXTI(LINE3);
 	MEXTI_voidSelectTrigger(LINE3,FALLING);
+	MEXIT_voidSetCallback(3);
 
-	/*MEXIT_voidSetCallback(3);
-*/
 
 	while (1)
     {
-		Blink_LED();
+		MGPIO_vSetPinVal(GPIO_PORTA,LED_Y,GPIO_HIGH);
+		MGPIO_vSetPinVal(GPIO_PORTA,LED_G,GPIO_HIGH);
+		MGPIO_vSetPinVal(GPIO_PORTA,LED_R,GPIO_LOW);
+
     }
 	return 0;
 }

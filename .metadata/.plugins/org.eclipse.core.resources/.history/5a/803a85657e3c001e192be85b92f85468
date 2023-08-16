@@ -63,8 +63,8 @@ int main(void)
 	MEXTI_voidEnableEXTI(LINE3);
 	MEXTI_voidSelectTrigger(LINE3,FALLING);
 
-	/*MEXIT_voidSetCallback(3);
-*/
+	MEXIT_voidSetCallback(3);
+
 
 	while (1)
     {

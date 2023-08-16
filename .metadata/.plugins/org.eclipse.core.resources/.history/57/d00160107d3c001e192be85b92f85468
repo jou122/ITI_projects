@@ -33,7 +33,6 @@
 #include "MRCC_Int.h"
 #include "MEXTI_Int.h"
 #include "MSTK_Int.h"
-
 #define LED_G 0
 #define LED_Y 1
 #define LED_R 2
@@ -63,8 +62,8 @@ int main(void)
 	MEXTI_voidEnableEXTI(LINE3);
 	MEXTI_voidSelectTrigger(LINE3,FALLING);
 
-	/*MEXIT_voidSetCallback(3);
-*/
+	MEXIT_voidSetCallback(3);
+
 
 	while (1)
     {
