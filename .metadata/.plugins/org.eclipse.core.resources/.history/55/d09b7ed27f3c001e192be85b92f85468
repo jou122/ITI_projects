@@ -29,9 +29,9 @@ typedef struct{
 
 }GPIO_MemMap_t;
 
-#define GPIOA ((volatile GPIO_MemMap_t*)(MGPIOA_BASE_ADDR))
-#define GPIOB ((volatile GPIO_MemMap_t*)(MGPIOB_BASE_ADDR))
-#define GPIOC ((volatile GPIO_MemMap_t*)(MGPIOC_BASE_ADDR))
+#define GPIOA ((volatile GPIO_MemMap_t*)(GPIOA_BASE_ADDR))
+#define GPIOB ((volatile GPIO_MemMap_t*)(GPIOB_BASE_ADDR))
+#define GPIOC ((volatile GPIO_MemMap_t*)(GPIOC_BASE_ADDR))
 
 
 #endif /* MCAL_MGPIO_MGPIO_PRIVATE_H_ */
