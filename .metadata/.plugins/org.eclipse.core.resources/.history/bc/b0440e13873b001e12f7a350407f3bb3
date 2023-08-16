@@ -1,0 +1,50 @@
+/*
+ * MSTK_Prog.c
+ *
+ *  Created on: Aug 15, 2023
+ *      Author: user
+ */
+
+#include"../../LIB/BIT_Math.h"
+#include"../../LIB/STD_Types.h"
+#include "MSTK_Int.h"
+#include "MSTK_Config.h"
+#include "MSTK_Private.h"
+
+void MSTK_vInit(void) {
+#if(MSTK_CLOCK_SOURCE==AHB)
+	{
+		CLR_BIT(MSTK->CTRL,CLKSOURCE);
+	}
+#elif(MSTK_CLOCK_SOURCE==AHB_BY_8)
+	{
+		SET_BIT(MSTK->CTRL,CLKSOURCE);
+	}
+#endif
+}
+
+void MSTK_vSetIntState(MSTK_INT_STATE_t Copy_State){
+	switch(Copy_State){
+		case MSTK_INT_ENABLE:
+			SET_BIT(MSTK->CTRL,TICKINT);
+			break;
+		case MSTK_INT_DISABLE:
+			SET_BIT(MSTK->CTRL,TICKINT);
+			break;
+	}
+}
+
+u8  MSTK_u8GetFlag(){
+return GET_BIT(MSTK->CTRL,COUNTFLAG);
+}
+
+
+void MSTK_vStart(u32 Copy_Value){
+	MSTK->LOAD=Copy_Value;
+	MSTK->VAL=0;
+	SET_BIR(MSTK->CTRL,ENABLE);
+}
+
+void MSTK_vDelay_us(u32 Copy_Value_us){
+	MSTK_vIntState(MSTK_INT_DISABLE)
+}

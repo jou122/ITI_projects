@@ -1,0 +1,33 @@
+/*
+ * MRCC.c
+ *
+ *  Created on: Aug 8, 2023
+ *      Author: user
+ */
+#include "../include/MRCC.h"
+
+void RCC_Init(void){
+
+	/*Enable HSI (Internal high-speed clock)*/
+
+	RCC -> CR |= RCC_CR_HSION;
+
+
+	/*Wait until HSI is Ready */
+
+	while(!(RCC -> CR & RCC_CR_HSIRDY));
+
+
+	/*Select HSI as the System Clock Source */
+
+	RCC -> CFGR &=	~RCC_CFGR_SW;
+	RCC -> CFGR |= RCC_CFGR_SW_HSI;
+
+	/*Wait until HSI is used as the system clock source */
+
+	while((RCC->CFGR & RCC_SWS) != RCC_CFGR_SWS_HSI);
+
+}
+
+
+

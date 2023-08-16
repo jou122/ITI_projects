@@ -1,0 +1,16 @@
+/*
+ * MRCC_Prog.c
+ *
+ *  Created on: Aug 10, 2023
+ *      Author: user
+ */
+
+#include"../../LTB/STD_Types.h"
+#include"../../LTB/BIT_Math.h"
+
+#include"MRCC_Int.h"
+#include"MRCC_Private.h"
+#include"MRCC_Config.h"
+
+void
+

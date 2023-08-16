@@ -1,0 +1,23 @@
+/*
+ * MSTK_Prog.c
+ *
+ *  Created on: Aug 15, 2023
+ *      Author: user
+ */
+
+#include"../../LIB/BIT_Math.h"
+#include"../../LIB/STD_Types.h"
+#include "MSTK_Int.h"
+#include "MSTK_Config.h"
+#include "MSTK_Private.h"
+
+void MSTK_vInit(void) {
+#if(MSTK_CLOCK_SOURCE==AHB)
+	{
+		SET_BIT(MSTK->CTRL,CLKSOURCE)
+	}
+#elif(MSTK_CLOCK_SOURCE==AHB_BY_8)
+	{
+
+	}
+}

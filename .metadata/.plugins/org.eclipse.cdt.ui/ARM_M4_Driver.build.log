@@ -1,0 +1,11 @@
+14:22:03 **** Build of configuration Debug for project ARM_M4_Driver ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "ARM_M4_Driver.elf"
+   text	   data	    bss	    dec	    hex	filename
+   7291	    160	    416	   7867	   1ebb	ARM_M4_Driver.elf
+Finished building: ARM_M4_Driver.siz
+ 
+
+14:22:03 Build Finished (took 266ms)
+

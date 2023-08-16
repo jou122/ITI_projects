@@ -1,0 +1,16 @@
+/*
+ * MEXTI_Int.h
+ *
+ *  Created on: Aug 14, 2023
+ *      Author: user
+ */
+
+#ifndef MCAL_MEXTI_MEXTI_INT_H_
+#define MCAL_MEXTI_MEXTI_INT_H_
+
+void MEXTI_voidEnableEXTI(u8 Copy_u8Line);
+void MEXTI_voidDisableEXTI(u8 Copy_u8Line);
+void MEXTI_voidSoftware(u8 Copy_u8Line);
+
+
+#endif /* MCAL_MEXTI_MEXTI_INT_H_ */

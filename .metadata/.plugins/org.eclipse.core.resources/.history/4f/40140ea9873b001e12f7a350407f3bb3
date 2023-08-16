@@ -1,0 +1,26 @@
+/*
+ * MSTK_Int.h
+ *
+ *  Created on: Aug 15, 2023
+ *      Author: user
+ */
+
+#ifndef MCAL_MSTK_MSTK_INT_H_
+#define MCAL_MSTK_MSTK_INT_H_
+
+#define ENABLE 0
+#define TICKINT 1
+#define CLKSOURCE 2
+#define COUNTFLAG 16
+
+typedef enum{
+	MSTK_INT_ENABLE,
+	MSTK_INT_DISABLE
+}MSTK_INT_STATE_t;
+
+
+void MSTK_vInit(void) ;
+void MSTK_vStart(u32 Copy_Value);
+void MSTK_vSetIntState(MSTK_INT_STATE_t Copy_State);
+
+#endif /* MCAL_MSTK_MSTK_INT_H_ */
