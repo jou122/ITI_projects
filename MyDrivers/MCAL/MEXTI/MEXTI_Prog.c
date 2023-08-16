@@ -59,6 +59,12 @@ void MEXTI_voidSelectTrigger(u8 Copy_u8Line , u8 Copy_u8Mode)
 }
 
 
+/*Gamed*/
+void MEXTI_voidInerruptSetPort(EXTI_Line Copy_u8Line,EXTI_Port Copy_u8Port){
+
+	SYSCFG->EXTICR[Copy_u8Line/4] &= ~(0b1111<<(4*(Copy_u8Line%4)));
+	SYSCFG->EXTICR[Copy_u8Line/4] |= Copy_u8Port<<(4*(Copy_u8Line%4));
+}
 
 
 
