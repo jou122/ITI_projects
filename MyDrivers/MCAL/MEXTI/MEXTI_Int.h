@@ -13,10 +13,11 @@ void MEXTI_voidEnableEXTI(u8 Copy_u8Line);
 void MEXTI_voidDisableEXTI(u8 Copy_u8Line);
 void MEXTI_voidSetSoftware(u8 Copy_u8Line);
 void MEXTI_voidSelectTrigger(u8 Copy_u8Line , u8 Copy_u8Mode);
-void MEXIT_voidSetCallback(u8 Copy_u8InNum,void(*ptr)(void));
+void MEXIT_voidSetCallback(u8 Copy_u8Line,void(*ptr)(void));
 void MEXTI_voidEventMaskEnable(u8 Copy_u8Line);
 void MEXTI_voidEventMaskDisable(u8 Copy_u8Line);
 void MEXTI_ClearPendingReg(u8 Copy_u8Line );
+void MEXTI_voidInerruptSetPort(u8 Copy_u8Line,u8 Copy_u8Port);
 
 #define LINE0  0
 #define LINE1  1
@@ -34,6 +35,14 @@ void MEXTI_ClearPendingReg(u8 Copy_u8Line );
 #define LINE13 13
 #define LINE14 14
 #define LINE15 15
+
+
+#define PORTA 0
+#define PORTB 1
+#define PORTC 2
+#define PORTD 3
+#define PORTE 4
+#define PORTH 7
 
 
 #define NULL  0

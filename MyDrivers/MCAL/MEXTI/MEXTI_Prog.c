@@ -5,8 +5,8 @@
  *      Author: Youssef
  *      Version: V1
  */
-#include"../../LIB/BIT_Math.h"
-#include"../../LIB/STD_Types.h"
+#include"BIT_Math.h"
+#include"STD_Types.h"
 #include "MEXTI_int.h"
 #include "MEXTI_config.h"
 #include "MEXTI_private.h"
@@ -52,7 +52,7 @@ void MEXTI_voidSelectTrigger(u8 Copy_u8Line , u8 Copy_u8Mode)
 		case RISING 	:	SET_BIT(MEXTI -> RTSR , Copy_u8Line);
 							CLR_BIT(MEXTI -> FTSR , Copy_u8Line); 	break;
 		case FALLING	:	SET_BIT(MEXTI -> FTSR , Copy_u8Line);
-							CLR_BIT(MEXTI -> RTSR , Copy_u8Line) 	break;
+							CLR_BIT(MEXTI -> RTSR , Copy_u8Line); 	break;
 		case ON_CHANGE 	:	SET_BIT(MEXTI -> RTSR , Copy_u8Line);
 							SET_BIT(MEXTI -> FTSR , Copy_u8Line); 	break;
 	}
@@ -60,7 +60,7 @@ void MEXTI_voidSelectTrigger(u8 Copy_u8Line , u8 Copy_u8Mode)
 
 
 /*Gamed*/
-void MEXTI_voidInerruptSetPort(EXTI_Line Copy_u8Line,EXTI_Port Copy_u8Port){
+void MEXTI_voidInerruptSetPort(u8 Copy_u8Line,u8 Copy_u8Port){
 
 	SYSCFG->EXTICR[Copy_u8Line/4] &= ~(0b1111<<(4*(Copy_u8Line%4)));
 	SYSCFG->EXTICR[Copy_u8Line/4] |= Copy_u8Port<<(4*(Copy_u8Line%4));

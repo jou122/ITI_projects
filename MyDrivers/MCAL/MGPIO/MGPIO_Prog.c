@@ -5,8 +5,8 @@
  *      Author: Mostafa Ashraf
  */
 
-#include"../../LIB/BIT_Math.h"
-#include"../../LIB/STD_Types.h"
+#include"BIT_Math.h"
+#include"STD_Types.h"
 
 #include"MGPIO_Int.h"
 #include"MGPIO_Private.h"
