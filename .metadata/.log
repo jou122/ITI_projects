@@ -999,3 +999,9 @@ java.io.FileNotFoundException: http://gnuarmeclipse.sourceforge.net/updates/cont
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-08-16 15:19:01.230
+!MESSAGE Indexed 'PROJECT1' (27 sources, 301 headers) in 2.3 sec: 18,123 declarations; 31,971 references; 0 unresolved inclusions; 149 syntax errors; 125 unresolved names (0.25%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-08-16 15:21:20.046
+!MESSAGE Indexed 'PROJECT1' (27 sources, 301 headers) in 2.05 sec: 18,122 declarations; 31,974 references; 0 unresolved inclusions; 149 syntax errors; 125 unresolved names (0.25%)
