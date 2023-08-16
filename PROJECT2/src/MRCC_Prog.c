@@ -2,8 +2,8 @@
 /* Version : V1											  */
 /* Date : 11/8/2023										  */
 
-#include"../../LIB/BIT_Math.h"
-#include"../../LIB/STD_Types.h"
+#include"BIT_Math.h"
+#include"STD_Types.h"
 #include "MRCC_Int.h"
 #include "MRCC_Config.h"
 #include "MRCC_Private.h"

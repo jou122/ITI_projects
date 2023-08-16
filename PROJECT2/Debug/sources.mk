@@ -27,10 +27,6 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-src/MCAL/MEXTI \
-src/MCAL/MGPIO \
-src/MCAL/MRCC \
-src/MCAL/MSTK \
 src \
 system/src/cmsis \
 system/src/cortexm \

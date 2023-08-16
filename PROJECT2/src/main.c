@@ -26,17 +26,15 @@
  */
 
 // ----------------------------------------------------------------------------
+#include"BIT_Math.h"
+#include"STD_Types.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "MCAL/MGPIO/MGPIO_Int.h"
+#include "MGPIO_Int.h"
 #include "MRCC_Int.h"
-#include "MSTK_Int.h"
 
 
-#define LED_Y 0
-#define LED_G 1
+#define LED_G 0
+#define LED_Y 1
 #define LED_R 2
 
 int main(int argc, char* argv[])
@@ -55,7 +53,7 @@ int main(int argc, char* argv[])
     {
 		MGPIO_vSetPinVal(GPIO_PORTA,LED_Y,GPIO_HIGH);
 		MGPIO_vSetPinVal(GPIO_PORTA,LED_G,GPIO_HIGH);
-		MGPIO_vSetPinVal(GPIO_PORTA,LED_R,GPIO_HIGH);
+		MGPIO_vSetPinVal(GPIO_PORTA,LED_R,GPIO_LOW);
 
     }
 	return 0;

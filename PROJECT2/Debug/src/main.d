@@ -1,3 +1,10 @@
-src/main.o: ../src/main.c ../system/include/diag/Trace.h
+src/main.o: ../src/main.c ../include/BIT_Math.h ../include/STD_Types.h \
+ ../include/MGPIO_Int.h ../include/MRCC_Int.h
 
-../system/include/diag/Trace.h:
+../include/BIT_Math.h:
+
+../include/STD_Types.h:
+
+../include/MGPIO_Int.h:
+
+../include/MRCC_Int.h:
