@@ -51,14 +51,12 @@ void Blink_LED(void)
 	MGPIO_vSetPinVal(MGPIO_PORTA,LED_G,MGPIO_HIGH);
 	MGPIO_vSetPinVal(MGPIO_PORTA,LED_R,MGPIO_HIGH);
 
-	MSTK_vDelay_ms(2000);
-	MSTK_vDelay_ms(2000);
-	MSTK_vDelay_ms(2000);
-	MSTK_vDelay_ms(2000);
-	MSTK_vDelay_ms(2000);
-	MSTK_vDelay_ms(2000);
-	MSTK_vDelay_ms(2000);
-	MSTK_vDelay_ms(2000);
+	MSTK_vDelay_ms(16000);
+	MSTK_vDelay_ms(16000);
+	MSTK_vDelay_ms(16000);
+	MSTK_vDelay_ms(16000);
+	MSTK_vDelay_ms(16000);
+
 
 	MGPIO_vSetPinVal(MGPIO_PORTA,LED_Y,MGPIO_LOW);
 	MGPIO_vSetPinVal(MGPIO_PORTA,LED_G,MGPIO_LOW);

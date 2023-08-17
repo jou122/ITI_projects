@@ -14,16 +14,16 @@ void MRCC_vInit(void)
 
 	/* Enable HSI */
 	SET_BIT(RCC->CR, HSION);
+	while(!GET_BIT(RCC->CR,(HSIRDY)));
 
 	/* Select HSI As Clock Source */
 	CLR_BIT(RCC->CFGR, SW0);
 	CLR_BIT(RCC->CFGR, SW1);
 
 
-#elif MRCC_SYS_CLK_SRC == HSE
+#elif (MRCC_SYS_CLK_SRC == HSE)
 
-		/* Enable HSE */
-		SET_BIT(RCC->CR, HSEON);
+
 
 		#if MRCC_HSE_SRC == RC
 		/* Enable Bypass */
@@ -34,14 +34,18 @@ void MRCC_vInit(void)
 		CLR_BIT(RCC->CR, HSEBYP);
 		#endif
 
+		/* Enable HSE */
+		SET_BIT(RCC->CR, HSEON);
+		while(!GET_BIT(RCC->CR,(HSERDY)));
+
 		/* Select HSE As Clock Source */
 		SET_BIT(RCC->CFGR, SW0);
 		CLR_BIT(RCC->CFGR, SW1);
 
-		#elif MRCC_CLOCK_SRC == MRCC_PLL
+#elif MRCC_CLOCK_SRC == MRCC_PLL
 
-		#else
-			#error "Wrong Clock Source"
+#else
+	#error "Wrong Clock Source"
 
 #endif
 
