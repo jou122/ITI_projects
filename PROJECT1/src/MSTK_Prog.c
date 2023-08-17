@@ -81,18 +81,18 @@ u32 MSTK_u32GetElabsedTime(void){
 void MSTK_vCount(u32 Copy_u32Value){
 	MSTK->LOAD=Copy_u32Value;
 	MSTK->VAL=0;
-	SET_BIR(MSTK->CTRL,MSTK_ENABLE);
+	SET_BIT(MSTK->CTRL,MSTK_ENABLE);
 }
 
 void MSTK_vDelay_us(u32 Copy_u32ValueUs){
-	MSTK_vIntState(MSTK_INT_DISABLE);
+	MSTK_vSetIntState(MSTK_INT_DISABLE);
 	MSTK_vCount(Copy_u32ValueUs);
 	while(MSTK_u8GetFlag()==0);
 	CLR_BIT(MSTK->CTRL, MSTK_ENABLE);
 }
 
 void MSTK_vDelay_ms(u32 Copy_u32ValueMs){
-	MSTK_vIntState(MSTK_INT_DISABLE);
+	MSTK_vSetIntState(MSTK_INT_DISABLE);
 	MSTK_vCount(Copy_u32ValueMs*1000);
 	while(MSTK_u8GetFlag()==0);
 	CLR_BIT(MSTK->CTRL, MSTK_ENABLE);

@@ -33,6 +33,10 @@
 #include "MRCC_Int.h"
 #include "MEXTI_Int.h"
 #include "MSTK_Int.h"
+#include "MNVIC_Int.h"
+
+
+#include "MEXTI_Private.h"
 
 #define LED_G 0
 #define LED_Y 1
@@ -43,6 +47,18 @@ void Blink_LED(void)
 {
 	MGPIO_vSetPinVal(MGPIO_PORTA,LED_Y,MGPIO_HIGH);
 	MGPIO_vSetPinVal(MGPIO_PORTA,LED_G,MGPIO_HIGH);
+	MGPIO_vSetPinVal(MGPIO_PORTA,LED_R,MGPIO_HIGH);
+	MSTK_vDelay_ms(2000);
+	MGPIO_vSetPinVal(MGPIO_PORTA,LED_Y,MGPIO_LOW);
+	MGPIO_vSetPinVal(MGPIO_PORTA,LED_G,MGPIO_LOW);
+	MGPIO_vSetPinVal(MGPIO_PORTA,LED_R,MGPIO_LOW);
+	MSTK_vDelay_ms(2000);
+	MGPIO_vSetPinVal(MGPIO_PORTA,LED_Y,MGPIO_HIGH);
+	MGPIO_vSetPinVal(MGPIO_PORTA,LED_G,MGPIO_HIGH);
+	MGPIO_vSetPinVal(MGPIO_PORTA,LED_R,MGPIO_HIGH);
+	MSTK_vDelay_ms(2000);
+	MGPIO_vSetPinVal(MGPIO_PORTA,LED_Y,MGPIO_LOW);
+	MGPIO_vSetPinVal(MGPIO_PORTA,LED_G,MGPIO_LOW);
 	MGPIO_vSetPinVal(MGPIO_PORTA,LED_R,MGPIO_LOW);
 }
 
@@ -55,7 +71,7 @@ int main(void)
 	MRCC_vInit();
 
 	MRCC_vEnableClock(RCC_AHB1,GPIOAEN);
-	MRCC_vEnableClock(RCC_AHB1,SYSCFGEN);
+	MRCC_vEnableClock(RCC_APB2,SYSCFGEN);
 
 
 	MGPIO_vSetPinMode(MGPIO_PORTA,LED_Y,MGPIO_MODE_OUTPUT);
@@ -65,14 +81,30 @@ int main(void)
 	MGPIO_vSetPinMode(MGPIO_PORTA,button,MGPIO_MODE_INPUT);
 	MGPIO_vSetPinInputPull(MGPIO_PORTA, button, MGPIO_PULL_UP);
 
-	MEXTI_voidInerruptSetPort(LINE3,MEXTI_PORTA);
-	MEXTI_voidSelectTrigger(LINE3,FALLING);
-	MEXIT_voidSetCallback(LINE3,fun_ptr);
-	MEXTI_voidEnableEXTI(LINE3);
 
+
+	MEXTI_voidEnableEXTI(MEXTI_LINE3);
+	MEXTI_voidSelectTrigger(MEXTI_LINE3,FALLING);
+	MEXIT_voidSetCallback(MEXTI_LINE3,fun_ptr);
+
+
+	MNVIC_VoidEnableInterrupt(9);
+
+
+	MEXTI_voidInerruptSetPort(MEXTI_LINE3,MEXTI_PORTA);
+
+
+	//MNVIC_VoidEnableInterruptPending(9);
 
 	while (1)
     {
+
+
     }
 	return 0;
 }
+
+
+
+
+

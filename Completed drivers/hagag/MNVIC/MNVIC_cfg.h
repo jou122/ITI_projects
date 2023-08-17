@@ -2,22 +2,4 @@
 #define MNVIC_CFG_H
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif

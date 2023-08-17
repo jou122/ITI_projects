@@ -75,10 +75,27 @@ void MEXIT_voidSetCallback(u8 Copy_u8InNum,void(*ptr)(void))
 
 void EXTI0_IRQHandler(void){
 	EXIT_CallBack_Arr[0]();
-	MEXTI_ClearPendingReg(LINE0);
+	MEXTI_ClearPendingReg(MEXTI_LINE0);
 }
 
 void EXTI1_IRQHandler(void){
 	EXIT_CallBack_Arr[1]();
-	MEXTI_ClearPendingReg(LINE1);
+	MEXTI_ClearPendingReg(MEXTI_LINE1);
+}
+
+void EXTI2_IRQHandler(void){
+	EXIT_CallBack_Arr[2]();
+	MEXTI_ClearPendingReg(MEXTI_LINE2);
+}
+
+
+void EXTI3_IRQHandler(void){
+	EXIT_CallBack_Arr[3]();
+	MEXTI_ClearPendingReg(MEXTI_LINE3);
+}
+
+
+void EXTI4_IRQHandler(void){
+	EXIT_CallBack_Arr[4]();
+	MEXTI_ClearPendingReg(MEXTI_LINE4);
 }
