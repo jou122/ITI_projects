@@ -1,8 +1,9 @@
 /*
  * MGPIO_Prog.c
  *
- *  Created on: Aug 10, 2023
- *      Author: Mostafa Ashraf
+ *  Created on: Aug 20, 2023
+ *      Author: Youssef Mohammed
+		Version: 3
  */
 
 #include"BIT_Math.h"
@@ -309,6 +310,27 @@ void MGPIO_vSetPinVal_fast(u8 Copy_u8PortId, u8 Copy_u8PinNo, u8 Copy_u8PinVal){
 				}
 
 }
+
+
+void MGPIO_vSetPortVal(u8 Copy_u8PortId, u16 Copy_u16PortVal){
+	switch(Copy_u8PortId){
+	case MGPIO_PORTA:
+		GPIOA -> ODR = Copy_u16PortVal;
+		break;
+
+	case MGPIO_PORTB:
+		GPIOB -> ODR = Copy_u16PortVal;
+		break;
+
+	case MGPIO_PORTC:
+		GPIOC -> ODR = Copy_u16PortVal;
+
+		break;
+		}
+
+	}
+
+
 
 void MGPIO_vSetAlternativeFunction(u8 Copy_u8PortId, u8 Copy_u8PinNo, u8 Copy_u8AltFun){
 	if(Copy_u8PinNo<8){

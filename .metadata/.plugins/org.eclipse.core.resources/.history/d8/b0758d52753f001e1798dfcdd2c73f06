@@ -1,0 +1,36 @@
+#include"BIT_Math.h"
+#include"STD_Types.h"
+
+#include "MGPIO_Int.h"
+#include "MRCC_Int.h"
+#include "MSTK_Int.h"
+
+void main(void)
+{
+
+
+	MRCC_vEnableClock(RCC_AHB1,GPIOAEN);
+	MRCC_vEnableClock(RCC_APB2,SYSCFGEN);
+
+
+	MSTK_vInit();
+
+	MGPIO_vSetPinMode(MGPIO_PORTA,LED_Y,MGPIO_MODE_OUTPUT);
+	MGPIO_vSetPinMode(MGPIO_PORTA,LED_G,MGPIO_MODE_OUTPUT);
+	MGPIO_vSetPinMode(MGPIO_PORTA,LED_R,MGPIO_MODE_OUTPUT);
+
+	MGPIO_vSetPinMode(MGPIO_PORTA,button,MGPIO_MODE_INPUT);
+	MGPIO_vSetPinInputPull(MGPIO_PORTA, button, MGPIO_PULL_UP);
+
+
+
+
+  while (1)
+    {
+
+    }
+  return 0;
+}
+
+
+// ----------------------------------------------------------------------------

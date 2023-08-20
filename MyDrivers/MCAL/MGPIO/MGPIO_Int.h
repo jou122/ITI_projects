@@ -1,8 +1,9 @@
 /*
  * MGPIO_Int.h
  *
- *  Created on: Aug 10, 2023
- *      Author: Mostafa Ashraf
+ *  Created on: Aug 20, 2023
+ *      Author: Youssef Mohammed 
+        Version: 3
  */
 
 #ifndef MCAL_MGPIO_MGPIO_INT_H_
@@ -51,7 +52,7 @@ void MGPIO_vSetPinInputPull(u8 A_u8PortId, u8 A_u8PinNo, u8 A_u8PullType);
 u8 MGPIO_u8GetPinValue(u8 A_u8PortId, u8 A_u8PinNo);
 
 void MGPIO_vSetPinVal(u8 A_u8PortId, u8 A_u8PinNo, u8 A_u8PinVal);
-void MGPIO_vSetPinVal_fast(u8 A_u8PortId, u8 A_u8PinNo, u8 A_u8PinVal); /*BSRR*/
+void MGPIO_vSetPortVal(u8 Copy_u8PortId, u16 Copy_u16PortVal);
 
 void MGPIO_vSetAlternativeFunction(u8 A_u8PortId, u8 A_u8PinNo, u8 A_u8AltFun);
 
