@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;task3/include/MUSART_Interface.h&apos; to &apos;MUSART_Int.h&apos;" description="Rename resource &apos;MUSART_Interface.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include/MUSART_Interface.h" name="MUSART_Int.h" stamp="1693231619641" updateReferences="true"/>&#x0A;&#x0A;&#x0A;</session>

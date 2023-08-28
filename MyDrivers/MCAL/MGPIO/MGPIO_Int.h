@@ -42,6 +42,25 @@
 #define MGPIO_LOW  0
 #define MGPIO_HIGH 1
 
+/*Alternate Function*/
+#define MGPIO_AF0 	0			//system
+#define MGPIO_AF1 	1			//TIM 1/2
+#define MGPIO_AF2 	2			//TIM 3..5
+#define MGPIO_AF3 	3			//TIM 9..11
+#define MGPIO_AF4 	4			//I2C 1..3
+#define MGPIO_AF5 	5			//SPI 1..4
+#define MGPIO_AF6 	6			//SPI3
+#define MGPIO_AF7 	7			//USART 1..2
+#define MGPIO_AF8 	8			//USART 6
+#define MGPIO_AF9 	9			//I2C 2..3
+#define MGPIO_AF10 	10			//OTG_FS
+#define MGPIO_AF11	11
+#define MGPIO_AF12 	12		//SDIO
+#define MGPIO_AF13	13
+#define MGPIO_AF14	14
+#define MGPIO_AF15 	15		//EVENTOUT
+
+
 
 
 void MGPIO_vSetPinMode(u8 A_u8PortId, u8 A_PinNo, u8 A_u8Mode);

@@ -9,16 +9,6 @@
 #ifndef MCAL_MEXTI_MEXTI_INT_H_
 #define MCAL_MEXTI_MEXTI_INT_H_
 
-void MEXTI_voidEnableEXTI(u8 Copy_u8Line);
-void MEXTI_voidDisableEXTI(u8 Copy_u8Line);
-void MEXTI_voidSetSoftware(u8 Copy_u8Line);
-void MEXTI_voidSelectTrigger(u8 Copy_u8Line , u8 Copy_u8Mode);
-void MEXIT_voidSetCallback(u8 Copy_u8Line,void(*ptr)(void));
-void MEXTI_voidEventMaskEnable(u8 Copy_u8Line);
-void MEXTI_voidEventMaskDisable(u8 Copy_u8Line);
-void MEXTI_ClearPendingReg(u8 Copy_u8Line );
-void MEXTI_voidInerruptSetPort(u8 Copy_u8Line,u8 Copy_u8Port);
-
 #define LINE0  0
 #define LINE1  1
 #define LINE2  2
@@ -52,6 +42,15 @@ void MEXTI_voidInerruptSetPort(u8 Copy_u8Line,u8 Copy_u8Port);
 #define			FALLING				1
 #define			ON_CHANGE			2
 
+void MEXTI_voidEnableEXTI(u8 Copy_u8Line);
+void MEXTI_voidDisableEXTI(u8 Copy_u8Line);
+void MEXTI_voidSetSoftware(u8 Copy_u8Line);
+void MEXTI_voidSelectTrigger(u8 Copy_u8Line , u8 Copy_u8Mode);
+void MEXIT_voidSetCallback(u8 Copy_u8Line,void(*ptr)(void));
+void MEXTI_voidEventMaskEnable(u8 Copy_u8Line);
+void MEXTI_voidEventMaskDisable(u8 Copy_u8Line);
+void MEXTI_ClearPendingReg(u8 Copy_u8Line );
+void MEXTI_voidInerruptSetPort(u8 Copy_u8Line,u8 Copy_u8Port);
 
 
 #endif /* MCAL_MEXTI_MEXTI_INT_H_ */
